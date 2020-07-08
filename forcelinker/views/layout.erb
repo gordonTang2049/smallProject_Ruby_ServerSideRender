@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ForceLinker-Be the best version of you</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+    
+
+<header>  
+<h1>Be the best version of yourself</h1>
+    <%if logged_in?%>
+    <%= current_user_name %>
+        
+
+    <form action="/session" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Logout</button>
+    </form>
+    <%else %>
+
+    <form action="/login" method="post">
+
+    <label for="">email</label>
+    <input type="text" name="user_email">
+
+    <label for="">password</label>
+    <input type="password" name="password">
+    <button>Login</button>
+    </form>
+
+    <%end%>
+
+
+</header>
+<body class="back">
+
+  <%= yield %>
+
+</body>
+</html>

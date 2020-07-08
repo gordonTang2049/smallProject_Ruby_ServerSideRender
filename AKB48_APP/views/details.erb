@@ -1,0 +1,54 @@
+
+<div class="details_top">
+<h1> <%= @results['name'] %>  </h1>
+
+
+<form action="/akb48/<%= @results['id'] %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button class="details_page_remove">Delete</button>
+</form>
+
+<a href="/akb48/<%= @results['id'] %>/edit" class="details_page_edit">Edit</a>
+
+
+</div>
+
+<body class="detail_body">
+
+
+<div class="comment_on_features">
+Table for all photo album links- foregin Key
+
+1. Caption of photo
+2. photo URL
+3. Description
+[Bunch of photos ]
+
+Table for all misc - development / what movie has she play / song sing etc 
+
+
+</div>
+
+<img src="<%=@results['image_url']%>" alt="Photo1" srcset="" class="photo_detail_page"> 
+
+
+<div class="detail_description">
+Need to calculate age
+
+<label for="">Date of Birth </label>
+<h4><%= @results['dob'] %></h4>
+
+<label for="">Year of Joining </label>
+<h4><%= @results['year_of_joining'] %></h4>
+   
+<h4> AKB member status : 
+<%if @results['year_of_leaving'] == 'Current' %>Current
+<%else%>
+Left at <%= @results['year_of_leaving']%>
+<%end%>
+</h4>
+if left development after leaving AKB48
+</div>
+
+ 
+</body>

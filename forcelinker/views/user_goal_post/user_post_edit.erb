@@ -1,0 +1,21 @@
+
+
+<h1>Target Title : <%= @result['target_title']%></h1>
+
+<form action="/user/post_edit" method="post">
+<input type="hidden" name="_method" value="patch">
+
+<input type="hidden" name="id" value="<%=@result['id']%>">
+
+<label for="milestone_edit">Please edit your milestone here :</label>
+<input type="text" name="milestone_edit"> 
+
+<button>edit</button>
+</form>
+
+
+<form action="/user/delete_post_milestone" method="post">
+<input type="hidden" name="_method" value="delete">
+<input type="hidden" name="id" value="<%=@result['id']%>">
+<button>Milestone Terminator</button>
+</form>

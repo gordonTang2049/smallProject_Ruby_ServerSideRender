@@ -1,0 +1,17 @@
+
+<h1>hello Kobe, <% if @error == false  %>
+Please type your search in the box
+<% elsif @error == true  %>
+<%= "there are something wrong with your search, could you type it again" %>
+<%end%>
+</h1>
+
+     <form action="/movie" method="GET">
+     <section> Please type your movie title : </section>
+     <input type="text" name="title" value="Wall street">
+     <button>Search</button>
+     </form> 
+
+     
+
+    

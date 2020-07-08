@@ -1,0 +1,36 @@
+
+<h1> Log in </h1>
+
+<%# You  can create session %>
+<%#    %>
+
+<form action="/login" method="post">
+    <label for="">email</label>
+    <input type="text" name="user_email">
+
+    <%# hacker can intecep wifi getting below text %>
+    <%# paddlock %>
+    <%# Browser must not comprimise %>
+    <label for="">password</label>
+    <input type="password" name="password">
+    <button>Submit</button>
+</form>
+
+
+    
+    <h4>or Create New Account </h4>
+
+    <form action="/signup/create" method="POST" class="sign_up_form">
+    
+    <Label>Username that show on forcelinker </Label>
+    
+    <input type="text" name="user_name">
+    <Label>Your Email address</Label>
+    <input type="text" name="user_email">
+    <Label>Your password</Label>
+    <input type="password" name="user_password">
+    <Label>Please confirm your password</Label>
+    <input type="password" name="user_confirmed_password">
+
+    <button>Submit</button>
+    </form> 

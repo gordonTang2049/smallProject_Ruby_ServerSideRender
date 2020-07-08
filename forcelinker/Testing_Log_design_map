@@ -1,0 +1,176 @@
+Design & building  log
+==============
+
+1. Profile - update user_name / user_name / password
+
+- Re-sign up - after checking either user_name or user_email is exist, 
+                redirect to re-signUp (JS -> store values, only pop up warning box)
+- Delete your account - when you delete the account, it actually goes to another void table 
+
+- Logout button -> Condition -> only when session exists 
+
+- build login 
+      a. Login -> you can use user_email or user_name to logged in
+
+
+
+=======Issues
+    Major issues
+
+
+
+    Minor issues
+    - How to set psql query Ailas?
+
+    - How to send request without showing id?(done)
+
+    - Catch date exception-> date start date finish must not precedent
+
+-------Please fix the username-----------
+
+
+    - In sign up route, my is exist function may be wrong
+    raise the inspect, see whether the return value is what I want.
+
+  ------------
+   change to is_exist? -> change to return true/false
+    check_user_name_exist 
+     check_user_email_exist
+
+
+    -> What does result giving back?(done) 
+  --------------  -> give back zero 
+    test = "skjfhkjsdhj"
+
+    sql = "select * from users where user_email = $1;"
+    result = run_sql(sql, [test])
+
+    puts result.count
+    ----------------
+    User log book track user every action on web
+
+
+    
+
+
+===========
+
+
+Testing log  
+============================
+          1. ===    testing check whether repeat user_name/user_email
+                    # a. seeding (done)
+                    # b. check whether user_name/user_email EXIST   
+          
+          2. ====   redirect same user_name or user_email &&
+                    warn them has user_name or user_email or both
+
+                    # a. do I need to break the route?
+
+ ==================
+   2. a 
+
+
+
+======================   b. check whether user_name/user_email EXIST   
+            ---- b1. select all user_name -> 
+    
+
+
+            ---- b2. select all user_name
+
+require 'pry'
+require 'bcrypt'
+# require_relative 'db/shared'
+# require_relative 'models/dish'
+require 'pg'
+  
+def run_sql(sql, args = [])
+    
+  conn = PG.connect(dbname: 'forcelinker')
+  results = conn.exec_params(sql, args)
+  conn.close
+  results 
+end
+
+#             1. ===    testing check whether repeat user_name/user_email
+                    # a. seeding 
+                    # b. check whether user_name/user_email EXIST   
+
+#             ===   testing login 1. seeding
+# ==================
+
+    def all_user_name
+        sql = "SELECT user_name FROM users where user_name = 'sdfkdshfjdsh';"
+        # implicit return
+        run_sql(sql)
+    end
+
+    def all_user_email
+        sql = "SELECT user_email FROM users;"
+        # implicit return
+        run_sql(sql)
+    end
+        
+    # nil
+    def check_user_name_exist(user_name_input)
+        sql = "SELECT user_name FROM users where user_name = '#{user_name_input}';"
+        result = run_sql(sql)
+        result.values[0]
+    end   
+
+    # nil
+    def check_user_email_exist(user_name_input)
+        sql = "SELECT user_name FROM users where user_name = '#{user_name_input}';"
+        result = run_sql(sql)
+        result.values[0]
+    end   
+
+
+  
+    # def find_one_user_by_email(email)
+    #     sql = "SELECT * FROM dishes WHERE email = $1;"
+    #     run_sql(sql, [email])[0]
+    # end
+  
+    # def check_user_name_exist
+
+    # end   
+
+
+# binding.pry
+
+==========================
+ 
+
+===   testing login 1. seeding
+
+
+    def create_user(user_name, user_email, password)
+        password_digest = BCrypt::Password.create(password)
+      
+        sql = <<~SQL
+          INSERT INTO users 
+          (user_name, user_email, password_digest)
+          VALUES
+          ($1, $2, $3);
+        SQL
+        run_sql(sql, [user_name, user_email, password_digest])
+      end
+
+
+#   create_user('dt@ga.co', 'pudding')
+
+#   user = find_one_user_by_email('dt@ga.co')
+  
+  user_name1 = ['pudding', 'cakey', 'ribs', 'smoky','cake', 'cotton', 'muffin', 'pancakes']
+  
+  
+  user_email1 = ['pudding@xyz.com', 'cakey.abc.com', 'ribs@pod.com', 'smoky@gmail.com','cake@hal.com', 'cotton@ibm.com', 'muffin@popo.com', 'pancakes@hahah.com']
+  
+  password1 = ['123123', 'qwerty', 'abc123']
+
+  20.times do
+    create_user("#{user_name1.sample}", "#{user_email1.sample}", "#{password1.sample}")
+  end
+

@@ -1,0 +1,28 @@
+body {
+       
+
+
+}
+
+.list{
+       
+        display: inline-block;
+        
+
+}
+
+header{
+
+        display: inline-flex;
+        height: 100px;
+        background-color: aqua;
+        
+
+}
+
+.search { 
+        margin-left: 200px;
+
+
+
+}

@@ -1,0 +1,174 @@
+header {
+    background-color: #e76591;
+    margin-right: 200px;
+    width: 1300px;
+
+    display: inline-flex;
+    justify-content: space-evenly;
+
+}
+
+
+.home_add_new_member_button {
+
+    display: block;
+    width: 115px;
+    height: 35px;
+    background: #12c649;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;       
+    text-decoration: none;
+
+}
+
+.special_character {
+
+    color: #ff6e5e;
+
+}
+
+.home_add_new_member_button:hover {
+    display: block;
+    width: 115px;
+    height: 35px;
+    background: #7eedff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;       
+    text-decoration: none;
+
+    
+    }
+
+.brand {
+    margin-left: -350px;   
+
+
+}
+
+.akb_group_photo {
+    margin-left: -400px;    
+    height: 100px;
+    width: auto;
+
+}
+
+.home_page_img {
+
+    height: 350px;
+    width: auto;
+
+}
+
+
+.add_new_member_form {
+        display: flex;
+        flex-direction: column;     
+        width: 350px;    
+
+}
+
+.comment_on_features {
+    display: flex;
+    flex-direction: column;     
+}
+
+.add_member {
+    width: 100px;    
+
+
+}
+
+.photo_detail_page {
+
+    height: 400px;
+    width: auto;
+
+
+}
+
+.details_top {
+        display: flex;
+        justify-content: space-between;
+
+}
+.details_page_edit{
+
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;       
+    text-decoration: none;
+
+
+}
+
+.details_page_edit:hover{
+
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: teal;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;    
+    text-decoration: none;   
+
+}
+
+.edit_akb48_page {
+    height: 400px;
+    width: auto;
+
+
+}
+
+.details_page_remove {
+
+    display: block;
+    width: 115px;
+    height: 50px;
+    background: #f16c56;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;       
+    text-decoration: none;
+    
+
+
+}
+
+.details_page_remove:hover {
+    display: block;
+    width: 115px;
+    height: 50px;
+    background: #dc566f;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;       
+    text-decoration: none;
+    
+
+} 
+
+
+.detail_body {
+       
+
+}

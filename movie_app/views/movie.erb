@@ -1,0 +1,17 @@
+
+
+<div class="wrap">
+
+<% @result.each do|record|  %>
+<div class="list">
+
+<h1><a href="/movie/<%= record["Title"]%>"><%= record["Title"] %></a></h1>
+ 
+
+<h2> <%= record["Year"] %></h2>
+
+<img src="<%=record["Poster"]%>" alt="">
+</div>
+</div>
+
+<% end   %>

@@ -1,0 +1,19 @@
+header{
+        display: inline flex;
+        height: 60px;
+        background-color: mistyrose;
+        border-bottom: 2px soild black;
+
+}
+
+
+footer{
+    display: inline flex;
+    height: 60px;
+    background-color: coral;
+    border-top: 2px soild black;
+
+
+
+}
+

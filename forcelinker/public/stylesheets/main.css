@@ -1,0 +1,25 @@
+.sign_up_form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+header {
+    background-image: linear-gradient(to right, #fdb93c 70%, #573f83);
+  }
+
+.home_display_node {
+        display: flex;
+        flex-direction: column;
+}
+
+.back {
+    background-color: #ffdb97;
+
+}
+
+.node_profile_pic {
+    border-radius: 50%;
+    width: 400px;
+
+}

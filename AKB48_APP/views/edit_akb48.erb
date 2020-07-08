@@ -1,0 +1,21 @@
+<h1>Edit  <span style="color : LightSalmon;" > <%= @results['name'] %> </span> details</h1>
+
+<img src="<%=@results['image_url']%>" alt="" class="edit_akb48_page">
+
+
+
+<form action="/akb48/<%= @results['id'] %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+
+    <label for="">Date of Birth</label>
+    <input type="text" name="dob" value="<%= @results['dob'] %>">
+
+    <label for="">Year of Joining</label>
+    <input type="text" name="year_of_joining" value="<%= @results['year_of_joining'] %>">
+
+    <label for="">Year of Leaving</label>
+    <input type="text" name="year_of_leaving" value="<%= @results['year_of_leaving'] %>">
+
+  <button>update</button>
+</form>

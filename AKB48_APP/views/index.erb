@@ -1,0 +1,31 @@
+
+
+<a href="/akb48/new" class="home_add_new_member_button" >Add New members</a>
+<p>This is a famous Jpop group in Akihabara.<br>AKB stands for the initial of 
+<span class="special_character">AK</span>iha<span class="special_character">B</span>ara  </p>
+<br>
+
+<%# insert rick and monty to result %>
+
+<% @results.each do |member| %>
+
+
+  <h2>
+    <a href="/akb48/<%= member['id'] %>">
+      <%= member['name'] %>
+    </a>
+  </h2>
+  <img src="<%= member['image_url'] %>" alt="" class="home_page_img">
+     
+<% if member['year_of_leaving'] == 'Current' %>
+
+    <h3> 
+            Current Member
+    </h3>
+    <% else %>
+    <h3> Former member, Leave on Year of 
+        <%= member['year_of_leaving']%>
+    </h3>
+    <% end %>
+</div>
+<% end %>

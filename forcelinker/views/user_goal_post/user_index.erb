@@ -1,0 +1,32 @@
+
+<h1>hello world</h1>
+ <h2><%= current_user_name %></h2>
+
+<a href="/user/add_post" class="add_post">add new post</a>
+
+<%= @logged_in_warning%>
+
+<div class="user_target_node">
+
+<%@results.each do |record|%>
+
+<div class="target_child_node">
+
+<a href="/user/posts_editor/<%=record['id']%>">
+<h2> <%= record['target_title']%> </h2></a>
+
+<label for="start_date"> <%= record['date_of_start']%></label>
+<label for="finish_date"> <%= record['date_of_finish']%></label>
+<p> <%=record['target_content'] %> </p>
+<br>
+<h3>Milestone :</h3>
+<p> <%=record['milestone'] %> </p>
+<%end%>
+</div>
+
+
+
+</div>
+
+
+<a href="/signup/new"></a>

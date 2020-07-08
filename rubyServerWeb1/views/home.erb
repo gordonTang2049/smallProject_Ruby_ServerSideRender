@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Drink Beer App</h1>
+    
+    <h2> Number of beer <%= "#{@number_of_beer}" %> </h2>
+    <h2> Hello <%= "#{@client_name}" %> </h2>
+    <h2> Previous order <%= "#{@order}" %> </h2>
+    <h2>  WARNING!! Do not click me, if Number of beer is 0. Computer will self destruct</h2>
+    <%# do I need to specific on /home/client_name  %>
+    <form action="/home" method="get"> <section>Client name: </section>
+    <input type="text" name="client_name"><section>Number of beer: </section>
+    <input type="text" name="number_of_beer"><section>Order: </section>
+    <input type="text" name="order">
+    <button>Submit</button>
+    </form>
+
+    <a href="/home/<%=@number_of_beer -= 1%>/<%= @client_name = "Test"%>">Click me </a>
+    
+<%# <a href="#" onclick="this.style.backgroundColor='#009900';this.style.color='#FFFFFF';" >Click me</a> %>
+     
+</body>
+</html>
+
+
+
